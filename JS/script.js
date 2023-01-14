@@ -81,5 +81,54 @@ loginBox.appendChild(p);
 
 // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 
+// Create <section> tag for test
+let testSection = document.createElement("section");
+// Adding testSection to body
+body.appendChild(testSection);
+// Create loop to create 30 container page
+for (let i = 1; i <= 30; i++) {
+  // Create <div> tag for container
+  let testContainer = document.createElement("div");
+  // Set class for All testContainer
+  testContainer.classList.add("testContainer");
+  // Set class for testContainer one by one
+  testContainer.classList.add("container" + [i]);
+
+  // Appending testContainer to testSection
+  testSection.appendChild(testContainer);
+
+  // Create <div> tag for counter pages
+  let pageCounter = document.createElement("div");
+  // Set class for pageCounter
+  pageCounter.classList.add("pageCounter");
+
+  // Appending pageCounter to testContainer
+  testContainer.appendChild(pageCounter);
+
+  // Create span for pageCounter
+  let pageCounterSpan = document.createElement("span");
+  // Appending pageCounterSpan to pageCounter
+  pageCounter.appendChild(pageCounterSpan);
+  // Append span counter
+  pageCounterSpan.append(i + "/30");
+}
+
+// +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
 // ---> Events
 a.addEventListener("click", questionPage);
+
+// +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+// When form is submitted change display!
+function questionPage(e) {
+  e.preventDefault();
+  document.querySelector(".loginBox").style.display = "none";
+  document.querySelector(".container1").style.display = "flex";
+
+  // Create timer
+  let sec = 500;
+  let time = setInterval(myTimer, 1000);
+
+  function myTimer() {}
+}

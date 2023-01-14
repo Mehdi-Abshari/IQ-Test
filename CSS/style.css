@@ -176,3 +176,17 @@ body {
   padding-top: 25px;
   margin-bottom: -9px;
 }
+
+.testContainer {
+  color: #fff;
+  background: rgb(0, 0, 0, 0.5);
+  margin: 5% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2%;
+  border-radius: 5px;
+  width: 900px;
+  height:600px;
+  display: none;
+}
