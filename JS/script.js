@@ -49,7 +49,7 @@ userBox.appendChild(input);
 // Creating label for input
 let label = document.createElement("label");
 // Set text for label
-label.innerText = "Name:";
+label.innerText = "Name";
 // Appending label to userBox
 userBox.appendChild(label);
 
@@ -75,7 +75,7 @@ form.appendChild(a);
 // Creating <p> tag
 let p = document.createElement("p");
 // Set text for p
-p.innerText = "IQ test will start after submitting name.";
+p.innerText = "* IQ test will start after submitting name *";
 // Appending p to loginBox
 loginBox.appendChild(p);
 
@@ -111,6 +111,54 @@ for (let i = 1; i <= 30; i++) {
   pageCounter.appendChild(pageCounterSpan);
   // Append span counter
   pageCounterSpan.append(i + "/30");
+
+  // Create <div> tag for question test
+  let questionTest = document.createElement("div");
+  // Set class for All questionTest
+  questionTest.classList.add("questionTest");
+  // Set class for questionTest one by one
+  questionTest.classList.add("test" + i);
+  // Appending questionTest to testContainer
+  testContainer.appendChild(questionTest);
+
+  // Create <img> for test question
+  let testImg = document.createElement("img");
+  // Set attributes for one by one of <img> tag
+  testImg.setAttribute("src", "Images/" + [i] + "/test" + [i] + ".png");
+  // Appending testImg to questionTest
+  questionTest.appendChild(testImg);
+
+  // Create <div> tag for answer box
+  let answerBox = document.createElement("div");
+  // Set class for answer box
+  answerBox.classList.add("answerBox");
+  // Appending answerBox to testContainer
+  testContainer.appendChild(answerBox);
+
+  // Create conditional command for test answer
+  if (i <= 12) {
+    // loop for question one to twelve
+    for (let j = 1; j <= 6; j++) {
+      // Creating <img> tag for test answer
+      let option = document.createElement("img");
+      option.classList.add("option");
+      option.setAttribute(
+        "src",
+        "Images/" + [i] + "/" + [i] + "-" + [j] + ".png"
+      );
+      answerBox.appendChild(option);
+    }
+  } else {
+    for (let j = 1; j <= 8; j++) {
+      let option = document.createElement("img");
+      option.classList.add("option");
+      option.setAttribute(
+        "src",
+        "Images/" + [i] + "/" + [i] + "-" + [j] + ".png"
+      );
+      answerBox.appendChild(option);
+    }
+  }
 }
 
 // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
@@ -120,13 +168,33 @@ a.addEventListener("click", questionPage);
 
 // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 
-// When form is submitted change display!
+// selecting answer image
+let testAnswer = document.querySelectorAll(".answerBox img");
+// loop for next container
+for (let x = 0; x < testAnswer.length; x++) {
+  // addEventListener to when click at answer goes to next page
+  testAnswer[x].addEventListener("click", nextContainer);
+  // Function to 'display: none' previous page and 'display: flex' next page
+  function nextContainer() {
+    // Varibale for selecting test answer parent element
+    let container = testAnswer[x].parentElement;
+    // 'display: none' previous page
+    container.parentElement.style.display = "none";
+    // Varibale for selecting next element of container
+    let nextContainer = container.parentElement.nextElementSibling;
+    // 'display: flex' next page
+    nextContainer.style.display = "flex";
+  }
+}
+
+// Function for when form is submitted change display!
 function questionPage(e) {
   e.preventDefault();
   document.querySelector(".loginBox").style.display = "none";
   document.querySelector(".container1").style.display = "flex";
 
-  // Create timer
+  // Create timer for page
+  // Selecting time according to secend
   let sec = 500;
   let time = setInterval(myTimer, 1000);
 

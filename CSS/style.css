@@ -54,8 +54,7 @@ body {
   pointer-events: none;
   transition: 0.5s;
 }
-.loginBox .userBox input:focus ~ label,
-.loginBox .userBox input:valid ~ label {
+.loginBox .userBox input:focus ~ label {
   top: -20px;
   left: 0;
   color: #03e9f4;
@@ -88,7 +87,7 @@ body {
     0 0 100px #03e9f4;
   cursor: pointer;
 }
-.loginBox a input:hover {
+.loginBox a:hover input {
   color: #fff;
   cursor: pointer;
 }
@@ -180,13 +179,39 @@ body {
 .testContainer {
   color: #fff;
   background: rgb(0, 0, 0, 0.5);
+  box-shadow: 0 15px 25px rgb(0, 0, 0, 0.6);
   margin: 5% auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   padding: 2%;
   border-radius: 5px;
   width: 900px;
-  height:600px;
+  height: 600px;
   display: none;
+}
+.questionTest {
+  width: max-content;
+  background: rgb(182, 182, 182);
+  margin: 30px auto;
+  border-radius: 3px;
+}
+.answerBox {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 600px;
+  margin: 5px auto;
+  align-items: center;
+}
+.option {
+  width: max-content;
+  background: rgb(182, 182, 182);
+  border-radius: 3px;
+  margin: 10px;
+  transition: 0.15s;
+}
+.option:hover {
+  transform: scale(1.03);
+  cursor: pointer;
 }
