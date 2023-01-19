@@ -167,7 +167,6 @@ body {
     bottom: 100%;
   }
 }
-
 .loginBox p {
   font-size: 13px;
   color: #fff;
@@ -176,14 +175,20 @@ body {
   margin-bottom: -9px;
 }
 
+#timer {
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 55px;
+}
 .testContainer {
   color: #fff;
   background: rgb(0, 0, 0, 0.5);
   box-shadow: 0 15px 25px rgb(0, 0, 0, 0.6);
-  margin: 5% auto;
+  margin: 55px auto;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   padding: 2%;
   border-radius: 5px;
   width: 900px;
@@ -214,4 +219,23 @@ body {
 .option:hover {
   transform: scale(1.03);
   cursor: pointer;
+}
+.endTime {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 23px;
+  color: rgb(212, 212, 212);
+  width: 350px;
+  height: 300px;
+  background: rgb(0, 0, 0, 0.5);
+  box-shadow: 0 15px 25px rgb(0, 0, 0, 0.6);
+  border-radius: 5px;
+  margin: 100px auto;
+  padding: 20px 30px;
+}
+.endTime img {
+  width: 200px;
+  height: 200px;
+  border-radius: 3px;
 }

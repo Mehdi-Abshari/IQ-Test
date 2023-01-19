@@ -1,12 +1,12 @@
 // Selecting body
 let body = document.querySelector("body");
 
-// // Create <span> for timer on top of viewport
-// let span = document.createElement("span");
-// // Set attribute for span
-// span.setAttribute("id", "timer");
-// // Appending <span> to body
-// body.appendChild(span);
+// Create <span> for timer on top of viewport
+let span = document.createElement("span");
+// Set attribute for span
+span.setAttribute("id", "timer");
+// Appending <span> to body
+body.appendChild(span);
 
 // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 
@@ -41,6 +41,8 @@ form.appendChild(userBox);
 
 // Creating <input> tag
 let input = document.createElement("input");
+// Set class for input
+input.classList.add("userName");
 // Set attribute for input
 input.setAttribute("type", "text");
 // Appending input to userBox
@@ -163,6 +165,32 @@ for (let i = 1; i <= 30; i++) {
 
 // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 
+// Create <section> tag for end page
+let endTime = document.createElement("div");
+// Set class for section
+endTime.classList.add("endTime");
+// Apending endTime to body
+body.appendChild(endTime);
+
+// Create <h3> tag
+let h3 = document.createElement("h3");
+// Appending <h3> to end page
+endTime.appendChild(h3);
+// Adding text to h3
+h3.innerHTML = "Your Time Is Up !";
+
+// Create <img> tag
+let image = document.createElement("img");
+// Set attributes to image
+image.setAttribute("src", "../Images/Time-Up.png");
+// Apending image to endTime
+endTime.appendChild(image);
+
+// endTime assumption style
+endTime.style.display = "none";
+
+// +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
 // ---> Events
 a.addEventListener("click", questionPage);
 
@@ -196,7 +224,20 @@ function questionPage(e) {
   // Create timer for page
   // Selecting time according to secend
   let sec = 500;
-  let time = setInterval(myTimer, 1000);
+  let time = setInterval(timer, 1000);
 
-  function myTimer() {}
+  function timer() {
+    let timer = document.getElementById("timer");
+    timer.innerHTML = "Time left : " + sec + "sec";
+    sec--;
+
+    for (let z = 0; z < 30; z++) {
+      testBox = document.querySelectorAll(".testContainer");
+      if (sec == -1) {
+        clearInterval(time);
+        testBox[z].style.display = "none";
+        endTime.style.display = "flex";
+      }
+    }
+  }
 }
