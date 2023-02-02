@@ -220,7 +220,7 @@ body {
   transform: scale(1.03);
   cursor: pointer;
 }
-.endTime {
+.endPage {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -234,7 +234,7 @@ body {
   margin: 100px auto;
   padding: 20px 30px;
 }
-.endTime img {
+.endPage img {
   width: 200px;
   height: 200px;
   border-radius: 3px;
