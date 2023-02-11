@@ -181,6 +181,15 @@ endPage.appendChild(h3);
 // Adding text to h3
 h3.innerHTML = "Your Time Is Up !";
 
+// Cerate <h4> tag
+let h4 = document.createElement("h4");
+// Adding text to h4
+h4.innerText = "Your Final Score!";
+// Appending <h4> to end page
+endPage.appendChild(h4);
+// Set display none to h4
+h4.style.display = "none";
+
 // Create <img> tag
 let image = document.createElement("img");
 // Set attributes to image
@@ -401,10 +410,9 @@ function check(clickedItem) {
   localStorage.setItem("result", matchingAnswer.length);
 
   if (endPage.style.display == "flex") {
-    let h4 = document.createElement("h4");
-    h4.innerText = "Your Final Score!";
-    endPage.appendChild(h4);
+    timer.style.display = "none";
     h3.style.display = "none";
+    h4.style.display = "flex";
     image.style.display = "none";
     result = localStorage.getItem("result");
     submittedName = localStorage.getItem("name");

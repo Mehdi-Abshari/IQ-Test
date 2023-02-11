@@ -10,6 +10,7 @@ body {
   padding: 0;
   font-family: sans-serif;
   background: linear-gradient(#141e30, #243b55);
+  background-repeat: no-repeat;
 }
 .loginBox {
   position: absolute;
@@ -224,6 +225,10 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   font-size: 23px;
   color: rgb(212, 212, 212);
   width: 350px;
@@ -231,7 +236,6 @@ body {
   background: rgb(0, 0, 0, 0.5);
   box-shadow: 0 15px 25px rgb(0, 0, 0, 0.6);
   border-radius: 5px;
-  margin: 100px auto;
   padding: 20px 30px;
 }
 .endPage img {
